@@ -7,11 +7,65 @@
     {% if error %}
         <div style="color:red;">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <form action="{{ path('security_login') }}" method="post">
-        <input type="email" name="_username" value="{{ last_username }}" class="form-control" placeholder="{{ 'E-mail'|trans }}">
-        <input type="password" name="_password" class="form-control" placeholder="{{ 'Password'|trans }}">
-        <input type="submit" value="{{ 'Login'|trans }}">
-    </form>
+{#    <form action="{{ path('security_login') }}" method="post">
+        <input type="email" name="_username" value="{{ last_username }}" class="form-control" placeholder="{{ 'E-mail'|trans }}"> <br/>
+        <input type="password" name="_password" class="form-control" placeholder="{{ 'Password'|trans }}"> <br/>
+        <input type="submit" value="{{ 'Login'|trans }}"> <br/>
+    </form>#}
+
+<div class="wrapper-page account-page-full">
+
+    <div class="card">
+        <div class="card-block">
+
+            <div class="account-box">
+
+                <div class="card-box p-5">
+                    <h2 class="text-uppercase text-center pb-4">
+                        <a href="index.html" class="text-success">
+                            <span><img src="assets/images/logo_light.png" alt="" height="26"></span>
+                        </a>
+                    </h2>
+
+                    <form class="" action="#">
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <label for="emailaddress">Email address</label>
+                                <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <a href='security_forgot_password' class="text-muted float-right"><small>Forgot your password?</small></a>
+                                <label for="password">Password</label>
+                                <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row text-center">
+                            <div class="col-12">
+                                <button class="btn btn-block btn-custom waves-effect waves-light" type="submit">Sign In</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="row m-t-50">
+                        <div class="col-sm-12 text-center">
+                            <p class="text-muted">Don't have an account? <a href="page-register.html" class="text-dark ml-1"><b>Sign Up</b></a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
     <a href="{{ path('security_forgot_password') }}">{{ 'Forgot password'|trans }}</a>
     <a href="{{ path('security_register') }}">{{ 'Create account'|trans }}</a>
