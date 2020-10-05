@@ -4,7 +4,8 @@ namespace App\Repository\Authentication;
 
 use App\Entity\Authentication\PasswordRecovery;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
+
 
 /**
  * @method PasswordRecovery|null find($id, $lockMode = null, $lockVersion = null)

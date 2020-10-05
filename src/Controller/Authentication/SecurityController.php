@@ -72,7 +72,7 @@ class SecurityController extends AbstractController
     ) {
 
         if($this->checkAuthentication($translator)) {
-            // TODO Redirecht to system dashboard
+            // TODO Redirect to system dashboard
             // Please use return $this->render() to set a template.
             throw new NotImplementedException('Please specify a route for login');
         }

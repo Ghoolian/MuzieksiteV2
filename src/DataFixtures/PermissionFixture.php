@@ -5,7 +5,8 @@ namespace App\DataFixtures;
 use App\Entity\Authentication\Cluster;
 use App\Entity\Authentication\Permission;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
+
 
 class PermissionFixture extends Fixture
 {

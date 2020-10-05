@@ -2,9 +2,10 @@
 
 namespace App\Repository\Authentication;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
+
 use App\Entity\Authentication\Permission;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Permission|null find($id, $lockMode = null, $lockVersion = null)
