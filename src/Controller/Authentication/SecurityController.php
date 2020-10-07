@@ -127,6 +127,7 @@ class SecurityController extends AbstractController
             // TODO Redirect to system dashboard
             // Please use return $this->render() to set a template.
             throw new NotImplementedException('Please specify a route for login');
+            return $this->render('home.html.twig');
         }
 
         if($request->getMethod() == "POST") {
@@ -164,7 +165,7 @@ class SecurityController extends AbstractController
     public function recover($token, PasswordRecoveryRepository $recoveryRepository, Request $request, TranslatorInterface $translator, UserPasswordEncoderInterface $passwordEncoder) {
 
         if($this->checkAuthentication($translator)) {
-            // TODO Redirecht to system dashboard
+            // TODO Redirect to system dashboard
             // Please use return $this->render() to set a template.
             throw new NotImplementedException('Please specify a route for login');
         }

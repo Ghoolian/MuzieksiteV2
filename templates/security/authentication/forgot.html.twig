@@ -2,11 +2,12 @@
 {% block title %}{{ 'Recover password'|trans }}{% endblock %}
 
 {% block body %}
+    <br><br><br><br><br><br>
     <h1>{{ 'Recover password'|trans }}</h1>
 
     <form  action="{{ path('security_forgot_password') }}" method="post">
 
-        <input type="email" name="email" required placeholder="{{ 'E-mail'|trans }}">
+        <input name="email" type="email"  required placeholder="{{ 'E-mail'|trans }}"> <br/>
 
         <input type="hidden" name="_method" value="POST">
         <input type="hidden" name="_token" value="{{ csrf_token('password_recovery') }}">
