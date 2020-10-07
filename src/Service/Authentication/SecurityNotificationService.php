@@ -45,7 +45,7 @@ class SecurityNotificationService
     public function sendRecoveryMail(PasswordRecovery $recovery) {
         $email = (new Swift_Message)
             ->setSubject('Password recovery')
-            ->setFrom($_ENV['MAIL_SENDER'], 'ProjectName password recovery')
+            ->setFrom('pwmaintenancemediatastisch@gmail.com', 'ProjectName password recovery')
             ->setTo($recovery->getUser()->getEmail());
 
 
