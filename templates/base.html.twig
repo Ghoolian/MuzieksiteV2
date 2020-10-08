@@ -89,14 +89,14 @@
                 <ul class="navigation-menu">
 
                     <li class="has-submenu">
-                        <a href="home.html.twig"><i class="icon-speedometer"></i>Home</a>
+                        <a href="{{ path('home') }}"><i class="icon-speedometer"></i>Home</a>
                     </li>
 
                     <li class="has-submenu">
                         <a href="#"><i class="icon-layers"></i>Login</a>
                         <ul class="submenu">
-                            <li><a href="apps-calendar.html">Login</a></li>
-                            <li><a href="apps-tickets.html">Register</a></li>
+                            <li><a href="{{ path('security_login') }}">Login</a></li>
+                            <li><a href="{{ path('security_register') }}">Register</a></li>
                         </ul>
                     </li>
 

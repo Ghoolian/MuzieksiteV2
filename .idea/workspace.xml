@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f83b3ac8-79fc-441a-8cbf-9219f012b523" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201007151855.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201007152155.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Artiest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ArtiestRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Authentication/SecurityNotificationService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Authentication/SecurityNotificationService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/authentication/forgot.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/authentication/forgot.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/authentication/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/authentication/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/authentication/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/authentication/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +176,7 @@
       <workItem from="1601621675257" duration="13935000" />
       <workItem from="1601881309621" duration="22804000" />
       <workItem from="1601973203694" duration="10184000" />
-      <workItem from="1602054886367" duration="3962000" />
+      <workItem from="1602054886367" duration="19808000" />
     </task>
     <servers />
   </component>
@@ -197,10 +203,14 @@
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-2136" y="-270" key="NewPhpClassDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1601909174497" />
-    <state x="-2215" y="-260" width="600" height="534" key="find.popup" timestamp="1602058773031">
+    <state x="-3847" y="-696" width="1293" height="1407" key="dock-window-1" timestamp="1602072255076">
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
-    <state x="-2215" y="-260" width="600" height="534" key="find.popup/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602058773031" />
+    <state x="-3847" y="-696" width="1293" height="1407" key="dock-window-1/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602072255076" />
+    <state x="-2215" y="-260" width="600" height="592" key="find.popup" timestamp="1602084234110">
+      <screen x="-3840" y="-696" width="2560" height="1400" />
+    </state>
+    <state x="-2215" y="-260" width="600" height="592" key="find.popup/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602084234110" />
     <state x="1219" y="324" width="560" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601997641118" />
     <state x="-2257" y="-376" width="672" height="678" key="search.everywhere.popup" timestamp="1601898127519">
       <screen x="-3840" y="-696" width="2560" height="1400" />
