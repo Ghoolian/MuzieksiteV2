@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Artiest;
+use App\Entity\Artist;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Artiest|null find($id, $lockMode = null, $lockVersion = null)
- * @method Artiest|null findOneBy(array $criteria, array $orderBy = null)
- * @method Artiest[]    findAll()
- * @method Artiest[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Artist|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Artist|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Artist[]    findAll()
+ * @method Artist[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ArtiestRepository extends ServiceEntityRepository
+class ArtistRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Artiest::class);
+        parent::__construct($registry, Artist::class);
     }
 
     // /**
-    //  * @return Artiest[] Returns an array of Artiest objects
+    //  * @return Artist[] Returns an array of Artist objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ArtiestRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Artiest
+    public function findOneBySomeField($value): ?Artist
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')
