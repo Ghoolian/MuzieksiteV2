@@ -2,16 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f83b3ac8-79fc-441a-8cbf-9219f012b523" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ArtistController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ArtistType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201009124345.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AlbumController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Album.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AlbumType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/AlbumRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/album/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/album/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/album/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/album/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/album/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/album/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/artist/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/artist/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/artist/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/artist/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/artist/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/artist/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201002141647.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201002143428.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201007151802.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201007151855.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201007152155.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20201008114952.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Artiest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArtiestRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArtistRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArtistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArtistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Artist.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Authentication/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Authentication/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArtistRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArtistRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +192,8 @@
       <workItem from="1601881309621" duration="22804000" />
       <workItem from="1601973203694" duration="10184000" />
       <workItem from="1602054886367" duration="19808000" />
-      <workItem from="1602152060189" duration="8469000" />
+      <workItem from="1602152060189" duration="25022000" />
+      <workItem from="1602486224578" duration="603000" />
     </task>
     <servers />
   </component>
@@ -205,19 +220,27 @@
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-2140" y="-238" key="FileChooserDialogImpl/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1601882353319" />
-    <state x="1278" y="316" key="NewPhpClassDialog" timestamp="1602166640768">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-2136" y="-270" key="NewPhpClassDialog" timestamp="1602251556673">
+      <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
-    <state x="-2136" y="-270" key="NewPhpClassDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1601909174497" />
+    <state x="-2136" y="-270" key="NewPhpClassDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602251556673" />
     <state x="1278" y="316" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602166640768" />
+    <state x="-2084" y="-69" key="NewPhpFileDialog" timestamp="1602249017661">
+      <screen x="-3840" y="-696" width="2560" height="1400" />
+    </state>
+    <state x="-2084" y="-69" key="NewPhpFileDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602249017661" />
+    <state x="-2328" y="-260" key="Vcs.Push.Dialog.v2" timestamp="1602228096584">
+      <screen x="-3840" y="-696" width="2560" height="1400" />
+    </state>
+    <state x="-2328" y="-260" key="Vcs.Push.Dialog.v2/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602228096584" />
     <state x="-3847" y="-696" width="1293" height="1407" key="dock-window-1" timestamp="1602072255076">
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-3847" y="-696" width="1293" height="1407" key="dock-window-1/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602072255076" />
-    <state x="1219" y="324" width="560" height="534" key="find.popup" timestamp="1602157714589">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-2215" y="-260" width="602" height="592" key="find.popup" timestamp="1602253039368">
+      <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
-    <state x="-2215" y="-260" width="600" height="592" key="find.popup/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602084234110" />
+    <state x="-2215" y="-260" width="602" height="592" key="find.popup/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602253039368" />
     <state x="1219" y="324" width="560" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602157714589" />
     <state x="-2257" y="-376" width="672" height="678" key="search.everywhere.popup" timestamp="1601898127519">
       <screen x="-3840" y="-696" width="2560" height="1400" />

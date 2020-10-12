@@ -22,51 +22,51 @@ class ArtistController extends AbstractController
      */
     public function index(ArtistRepository $artistRepository): Response
     {
-        return $this->render('artiesten/index.html.twig', [
-            'artiestens' => $artistRepository->findAll(),
+        return $this->render('artist/index.html.twig', [
+            'artist' => $artistRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/new", name="artiesten_new", methods={"GET","POST"})
+     * @Route("/new", name="artist_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
-        $artiesten = new Artist();
-        $form = $this->createForm(ArtistType::class, $artiesten);
+        $artist = new Artist();
+        $form = $this->createForm(ArtistType::class, $artist);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($artiesten);
+            $entityManager->persist($artist);
             $entityManager->flush();
 
             return $this->redirectToRoute('artist_index');
         }
 
         return $this->render('artist/new.html.twig', [
-            'artiesten' => $artiesten,
+            'artist' => $artist,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="artiesten_show", methods={"GET"})
+     * @Route("/{id}", name="artist_show", methods={"GET"})
      */
-    public function show(Artist $artiesten): Response
+    public function show(Artist $artist): Response
     {
         return $this->render('artist/show.html.twig', [
-            'artiesten' => $artiesten,
+            'artist' => $artist,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="artiesten_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="artist_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN")
      */
-    public function edit(Request $request, Artist $artiesten): Response
+    public function edit(Request $request, Artist $artist): Response
     {
-        $form = $this->createForm(ArtistType::class, $artiesten);
+        $form = $this->createForm(ArtistType::class, $artist);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -76,20 +76,20 @@ class ArtistController extends AbstractController
         }
 
         return $this->render('artist/edit.html.twig', [
-            'artiesten' => $artiesten,
+            'artist' => $artist,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="artiesten_delete", methods={"DELETE"})
+     * @Route("/{id}", name="artist_delete", methods={"DELETE"})
      * @IsGranted("ROLE_ADMIN")
      */
-    public function delete(Request $request, Artist $artiesten): Response
+    public function delete(Request $request, Artist $artist): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$artiesten->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$artist->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($artiesten);
+            $entityManager->remove($artist);
             $entityManager->flush();
         }
 

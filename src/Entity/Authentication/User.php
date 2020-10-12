@@ -73,6 +73,7 @@ class User implements UserInterface
 
     public function __construct()
     {
+        $this->is_super = false;
         $this->created = new \DateTime('now');
         $this->updated = new \DateTime('now');
         $this->is_super = false;
@@ -213,10 +214,13 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        // We don't use text based roles
-        // But because Symfony occupies the name 'Role'
-        // We use 'clusters'
-        return ['ROLE_USER'];
+        $roles = ['ROLE_USER'];
+
+        if($this->is_super) {
+            $roles[] = 'ROLE_ADMIN';
+        }
+
+        return $roles;
     }
 
     /**
@@ -283,5 +287,7 @@ class User implements UserInterface
 
         return $this;
     }
+
+
 
 }
