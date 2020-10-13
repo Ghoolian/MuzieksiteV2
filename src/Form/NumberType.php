@@ -12,23 +12,21 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class NumberType extends AbstractType
 {
-
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Name')
-            ->add('Duration')
+            ->add('name')
+            ->add('duration')
             ->add('album', EntityType::class, [
                 'class' => Album::class,
-                'choice_label' => function(Album $albums) {
-                    return $albums->getName();
+                'choice_label' => function(Album $album) {
+                    return $album->getName();
                 }
             ]);
-        // Voor succesvol toevoegen van nieuw number
-        //, EntityType::class, [
-        //'class' => Albums::class
-        //]);
+                // Voor succesvol toevoegen van nieuw number
+                //, EntityType::class, [
+                //'class' => Album::class
+                //]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

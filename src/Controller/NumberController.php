@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Number;
-
 use App\Form\NumberType;
 use App\Repository\NumberRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -79,7 +78,9 @@ class NumberController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($number);
+            $entityManager->flush();
 
             return $this->redirectToRoute('number_index');
         }

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nummers{% endblock %}
+
+{% block body %}
+    <h1>Nummers</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ number.id }}</td>
+        </tr>
+        <tr>
+            <th>Naam</th>
+            <td>{{ number.name }}</td>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <td>{{ number.duration }}</td>
+        </tr>
+        <tr>
+            <th>Album</th>
+            <td>{{ number.album.name }}</td>
+        </tr>
+        <tr>
+            <th>Artiest</th>
+            <td>{{ number.album.artist.naam }} {{ number.album.artist.achternaam }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('number_index') }}">back to list</a>
+
+
+
+{% endblock %}

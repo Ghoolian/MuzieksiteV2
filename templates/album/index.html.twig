@@ -4,15 +4,18 @@
 
 {% block body %}
     <h1>Albums index</h1>
-
-    <table class="table">
-        <thead>
+<br><br>
+    <table class="table table-bordered mb-0">
+        <thead class="thead-light">
         <tr>
             <th>Id</th>
             <th>Naam</th>
             <th>Artiest naam</th>
             <th>Numbers</th>
-            <th>actions</th>
+            <th>Read</th>
+            {% if app.user.isSuper == "1" %}
+            <th>Admin actions</th>
+            {% endif %}
         </tr>
         </thead>
         <tbody>
@@ -22,21 +25,26 @@
                 <td>{{ album.id }}</td>
                 <td>{{ album.name }}</td>
                 <td>{{ album.artist.naam}} {{ album.artist.achternaam  }}</td>
-                <td></td>
-
-
-
                 <td>
-                    <a href="{{ path('album_show', {'id': album.id}) }}">show</a>
-                    {% if app.user %}
+                    {#                {% for number in number %}#}
+                    {#                {% if number.albumID == album.id %}#}
+                    {#                <td>{{ number.naam }}</td>#}
+                    {#                {% endif %}#}
+                    {#                {% endfor %}#}
+                </td>
+
+
+
+                <td><a href="{{ path('album_show', {'id': album.id}) }}">show</a></td>
                     {% if app.user.isSuper == "1" %}
-                    <div class="mb-3">
+
+
                 <td><a href="{{ path('album_edit', {'id': album.id}) }}">edit</a></td>
 
                 {% endif %}
-                {% endif %}
 
             </tr>
+
         {% else %}
             <tr>
                 <td colspan="3">no records found</td>
