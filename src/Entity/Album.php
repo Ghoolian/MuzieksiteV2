@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AlbumRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,9 +25,19 @@ class Album
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=artist::class, inversedBy="albums")
+     * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
      */
     private $artist;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Number::class, mappedBy="Album")
+     */
+    private $numbers;
+
+    public function __construct()
+    {
+        $this->numbers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -52,6 +64,37 @@ class Album
     public function setArtist(?artist $artist): self
     {
         $this->artist = $artist;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Number[]
+     */
+    public function getNumbers(): Collection
+    {
+        return $this->numbers;
+    }
+
+    public function addNumber(Number $number): self
+    {
+        if (!$this->numbers->contains($number)) {
+            $this->numbers[] = $number;
+            $number->setAlbum($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNumber(Number $number): self
+    {
+        if ($this->numbers->contains($number)) {
+            $this->numbers->removeElement($number);
+            // set the owning side to null (unless already changed)
+            if ($number->getAlbum() === $this) {
+                $number->setAlbum(null);
+            }
+        }
 
         return $this;
     }

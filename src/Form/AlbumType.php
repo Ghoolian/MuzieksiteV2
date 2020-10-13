@@ -15,7 +15,7 @@ class AlbumType extends AbstractType
     {
         $builder
             ->add('Name')
-            ->add('artistID', EntityType::class, [
+            ->add('artist', EntityType::class, [
                 'class' => Artist::class,
                 'choice_label' => function(Artist $artist) {
                     return $artist->getNaam();
