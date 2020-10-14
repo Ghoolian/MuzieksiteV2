@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f83b3ac8-79fc-441a-8cbf-9219f012b523" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201014093832.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201014122838.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/album/1044deb4a105a7d87acc156ba0893b7a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/album/3506b9905c8c9255bf86e996b5b90a54.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/album/920f63b5edab8b2ca72e2678514329c4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/album/d58a2ba30361e94a1eeaf645357ea0b5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AlbumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AlbumController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/NumberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NumberController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Album.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Number.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Number.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AlbumType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AlbumType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/NumberType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/NumberType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/album/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/album/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/album/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/album/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/number/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/number/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/number/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/number/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/number/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/number/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +192,7 @@
       <workItem from="1602486224578" duration="12964000" />
       <workItem from="1602574744366" duration="598000" />
       <workItem from="1602577873565" duration="12640000" />
+      <workItem from="1602659265477" duration="19372000" />
     </task>
     <servers />
   </component>
@@ -196,6 +211,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1042" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602164963280" />
+    <state x="-2190" y="-238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602665594307">
+      <screen x="-3840" y="-696" width="2560" height="1400" />
+    </state>
+    <state x="-2190" y="-238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602665594307" />
     <state x="-2141" y="-80" width="441" height="239" key="ComposerInitDialogKey" timestamp="1601908455462">
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
@@ -204,10 +223,10 @@
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-2140" y="-238" key="FileChooserDialogImpl/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1601882353319" />
-    <state x="-2136" y="-270" key="NewPhpClassDialog" timestamp="1602514268434">
+    <state x="-2136" y="-270" key="NewPhpClassDialog" timestamp="1602679294664">
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
-    <state x="-2136" y="-270" key="NewPhpClassDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602514268434" />
+    <state x="-2136" y="-270" key="NewPhpClassDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602679294664" />
     <state x="1278" y="316" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602166640768" />
     <state x="-2084" y="-69" key="NewPhpFileDialog" timestamp="1602249017661">
       <screen x="-3840" y="-696" width="2560" height="1400" />
@@ -221,10 +240,10 @@
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-3847" y="-696" width="1293" height="1407" key="dock-window-1/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602072255076" />
-    <state x="1219" y="324" width="573" height="534" key="find.popup" timestamp="1602599908232">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-2211" y="-260" width="602" height="592" key="find.popup" timestamp="1602686611414">
+      <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
-    <state x="-2215" y="-260" width="602" height="592" key="find.popup/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602515775553" />
+    <state x="-2211" y="-260" width="602" height="592" key="find.popup/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602686611414" />
     <state x="1219" y="324" width="573" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602599908232" />
     <state x="-2257" y="-376" width="672" height="678" key="search.everywhere.popup" timestamp="1601898127519">
       <screen x="-3840" y="-696" width="2560" height="1400" />

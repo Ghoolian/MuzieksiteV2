@@ -30,8 +30,6 @@ class NumberController extends AbstractController
 
     /**
      * @Route("/new", name="number_new", methods={"GET","POST"})
-     * @param Request $request
-     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -55,8 +53,6 @@ class NumberController extends AbstractController
 
     /**
      * @Route("/{id}", name="number_show", methods={"GET"})
-     * @param Number $number
-     * @return Response
      */
     public function show(Number $number): Response
     {
@@ -67,9 +63,6 @@ class NumberController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="number_edit", methods={"GET","POST"})
-     * @param Request $request
-     * @param Number $number
-     * @return Response
      * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Number $number): Response
@@ -93,9 +86,6 @@ class NumberController extends AbstractController
 
     /**
      * @Route("/{id}", name="number_delete", methods={"DELETE"})
-     * @param Request $request
-     * @param Number $number
-     * @return Response
      * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Number $number): Response

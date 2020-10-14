@@ -3,9 +3,9 @@
 {% block title %}New Number{% endblock %}
 
 {% block body %}
+    <br><br><br><br><br><br><br>
     <h1>Create new Number</h1>
-
     {{ include('number/_form.html.twig') }}
-
+<br>
     <a href="{{ path('number_index') }}">back to list</a>
 {% endblock %}

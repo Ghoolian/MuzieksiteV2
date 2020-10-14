@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Album;
+use App\Entity\Number;
 use App\Form\AlbumType;
 use App\Repository\AlbumRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -10,6 +11,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 /**
  * @Route("/album")
@@ -35,7 +39,31 @@ class AlbumController extends AbstractController
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            /** @var UploadedFile $albumhoes */
+            $albumhoes = $form->get('albumhoes')->getData();
+            if ($albumhoes) {
+                $originalFilename = pathinfo($albumhoes->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $newFilename = bin2hex(openssl_random_pseudo_bytes(16)).'.'.$albumhoes->guessExtension();
+
+                // Move the file to the directory where album images are stored
+                try {
+                    $albumhoes->move(
+                        $this->getParameter('albumhoes_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'Album Filename' property to store the image file name
+                // instead of its contents
+                $album->setAlbumhoes($newFilename);
+            }
+
+            if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
             $entityManager->flush();
@@ -67,6 +95,28 @@ class AlbumController extends AbstractController
     {
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
+
+        /** @var UploadedFile $albumhoes */
+        $albumhoes = $form->get('albumhoes')->getData();
+        if ($albumhoes) {
+            $originalFilename = pathinfo($albumhoes->getClientOriginalName(), PATHINFO_FILENAME);
+            // this is needed to safely include the file name as part of the URL
+            $newFilename = bin2hex(openssl_random_pseudo_bytes(16)).'.'.$albumhoes->guessExtension();
+
+            // Move the file to the directory where album images are stored
+            try {
+                $albumhoes->move(
+                    $this->getParameter('albumhoes_directory'),
+                    $newFilename
+                );
+            } catch (FileException $e) {
+                // ... handle exception if something happens during file upload
+            }
+
+            // updates the 'Album Filename' property to store the image file name
+            // instead of its contents
+            $album->setAlbumhoes($newFilename);
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();

@@ -12,6 +12,7 @@
             <th>Naam</th>
             <th>Artiest naam</th>
             <th>Numbers</th>
+            <th>Albumhoes</th>
             <th>Read</th>
             {% if app.user.isSuper == "1" %}
             <th>Admin actions</th>
@@ -25,14 +26,14 @@
                 <td>{{ album.id }}</td>
                 <td>{{ album.name }}</td>
                 <td>{{ album.artist.naam}} {{ album.artist.achternaam  }}</td>
-                <td>
-                    {#                {% for number in number %}#}
-                    {#                {% if number.albumID == album.id %}#}
-                    {#                <td>{{ number.naam }}</td>#}
-                    {#                {% endif %}#}
-                    {#                {% endfor %}#}
-                </td>
+                <td></td>
+                    {% for numbers in album %}
+                    {% if numbers.number.id == album.id %}
+                    <td>{{ numbers.number.name }}</td>
+                    {% endif %}
+                    {% endfor %}
 
+                <td><img src="{{ asset('images/album/' ~ album.albumhoes) }}" alt="Geen afbeelding"></a></td>
 
 
                 <td><a href="{{ path('album_show', {'id': album.id}) }}">show</a></td>

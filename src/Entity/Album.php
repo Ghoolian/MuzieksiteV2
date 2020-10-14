@@ -32,11 +32,17 @@ class Album
     /**
      * @ORM\OneToMany(targetEntity=Number::class, mappedBy="Album")
      */
-    private $numbers;
+    private $number;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Albumhoes;
 
     public function __construct()
     {
-        $this->numbers = new ArrayCollection();
+        $this->number = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -71,16 +77,19 @@ class Album
     /**
      * @return Collection|Number[]
      */
-    public function getNumbers(): Collection
+    public function getNumber(): Collection
     {
-        return $this->numbers;
+        return $this->number;
     }
 
     public function addNumber(Number $number): self
     {
-        if (!$this->numbers->contains($number)) {
-            $this->numbers[] = $number;
-            $number->setAlbum($this);
+        if ($this->number->contains($number)) {
+            $this->number->removeElement($number);
+            // set the owning side to null (unless already changed)
+            if ($number->getAlbum() === $this) {
+                $number->setAlbum(null);
+            }
         }
 
         return $this;
@@ -88,13 +97,26 @@ class Album
 
     public function removeNumber(Number $number): self
     {
-        if ($this->numbers->contains($number)) {
-            $this->numbers->removeElement($number);
+        if ($this->number->contains($number)) {
+            $this->number->removeElement($number);
             // set the owning side to null (unless already changed)
             if ($number->getAlbum() === $this) {
                 $number->setAlbum(null);
             }
         }
+
+        return $this;
+    }
+
+
+    public function getAlbumhoes(): ?string
+    {
+        return $this->Albumhoes;
+    }
+
+    public function setAlbumhoes(string $Albumhoes): self
+    {
+        $this->Albumhoes = $Albumhoes;
 
         return $this;
     }

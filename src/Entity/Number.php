@@ -73,4 +73,9 @@ class Number
 
         return $this;
     }
+    
+    public function __toString()
+    {
+       return 'Number';
+    }
 }
