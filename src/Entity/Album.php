@@ -32,7 +32,7 @@ class Album
     /**
      * @ORM\OneToMany(targetEntity=Number::class, mappedBy="Album")
      */
-    private $number;
+    private $numbers;
 
 
     /**
@@ -42,7 +42,7 @@ class Album
 
     public function __construct()
     {
-        $this->number = new ArrayCollection();
+        $this->numbers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -79,13 +79,13 @@ class Album
      */
     public function getNumber(): Collection
     {
-        return $this->number;
+        return $this->numbers;
     }
 
     public function addNumber(Number $number): self
     {
-        if ($this->number->contains($number)) {
-            $this->number->removeElement($number);
+        if ($this->numbers->contains($number)) {
+            $this->numbers->removeElement($number);
             // set the owning side to null (unless already changed)
             if ($number->getAlbum() === $this) {
                 $number->setAlbum(null);
@@ -95,13 +95,13 @@ class Album
         return $this;
     }
 
-    public function removeNumber(Number $number): self
+    public function removeNumber(Number $numbers): self
     {
-        if ($this->number->contains($number)) {
-            $this->number->removeElement($number);
+        if ($this->numbers->contains($numbers)) {
+            $this->numbers->removeElement($numbers);
             // set the owning side to null (unless already changed)
-            if ($number->getAlbum() === $this) {
-                $number->setAlbum(null);
+            if ($numbers->getAlbum() === $this) {
+                $numbers->setAlbum(null);
             }
         }
 

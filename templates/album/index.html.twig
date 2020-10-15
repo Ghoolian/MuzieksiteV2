@@ -26,12 +26,19 @@
                 <td>{{ album.id }}</td>
                 <td>{{ album.name }}</td>
                 <td>{{ album.artist.naam}} {{ album.artist.achternaam  }}</td>
-                <td></td>
-                    {% for numbers in album %}
-                    {% if numbers.number.id == album.id %}
-                    <td>{{ numbers.number.name }}</td>
-                    {% endif %}
+
+                <td>
+                    {% for nummers in album.number %}
+                    {{ nummers.name }}<br/>
                     {% endfor %}
+                </td>
+
+
+{#                    {% for numbers in number %}#}
+{#                    {% if numbers.number.album_id == album.id %}#}
+{#                    <td>{{ numbers.number.name }}</td>#}
+{#                    {% endif %}#}
+{#                    {% endfor %}#}
 
                 <td><img src="{{ asset('images/album/' ~ album.albumhoes) }}" alt="Geen afbeelding"></a></td>
 

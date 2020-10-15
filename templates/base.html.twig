@@ -105,8 +105,8 @@
                         <ul class="submenu">
                             <li>
                                 <ul>
-                                    <li><a href="ui-typography.html">Read</a></li>
-                                    <li><a href="ui-cards.html">Create</a></li>
+                                    <li><a href="{{ path('number_index') }}">Read</a></li>
+                                    <li><a href="{{ path('number_new') }}">Create</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -116,21 +116,21 @@
                         <a href="#"><i class="icon-fire"></i>Albums</a>
                         <ul class="submenu">
                             <li class="has-submenu">
-                            <li><a href="chart-flot.html">Read</a></li>
-                            <li><a href="chart-morris.html">Create</a></li>
+                            <li><a href="{{ path('album_index') }}">Read</a></li>
+                            <li><a href="{{ path('album_new') }}">Create</a></li>
                         </ul>
                     </li>
-                    </li>
+
 
                     <li class="has-submenu">
                         <a href="#"><i class="icon-fire"></i>Artiesten</a>
                         <ul class="submenu">
                             <li class="has-submenu">
-                            <li><a href="chart-flot.html">Read</a></li>
-                            <li><a href="chart-morris.html">Create</a></li>
+                            <li><<a href="{{ path('artist_index') }}">Read</a></li>
+                            <li><a href="{{ path('artist_new') }}">Create</a></li>
                         </ul>
                     </li>
-                    </li>
+
 
 
                 </ul>
