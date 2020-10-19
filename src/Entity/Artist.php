@@ -22,27 +22,27 @@ class Artist
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Naam;
+    private $Name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Achternaam;
+    private $Surname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Muziekstijl;
+    private $Musicstyle;
 
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $Geboortedatum;
+    private $Birthdate;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Beschrijving;
+    private $Description;
 
     /**
      * @ORM\OneToMany(targetEntity=Album::class, mappedBy="artist")
@@ -59,62 +59,62 @@ class Artist
         return $this->id;
     }
 
-    public function getNaam(): ?string
+    public function getName(): ?string
     {
-        return $this->Naam;
+        return $this->Name;
     }
 
-    public function setNaam(string $Naam): self
+    public function setName(string $Name): self
     {
-        $this->Naam = $Naam;
+        $this->Name = $Name;
 
         return $this;
     }
 
-    public function getAchternaam(): ?string
+    public function getSurname(): ?string
     {
-        return $this->Achternaam;
+        return $this->Surname;
     }
 
-    public function setAchternaam(string $Achternaam): self
+    public function setSurname(string $Surname): self
     {
-        $this->Achternaam = $Achternaam;
+        $this->Surname = $Surname;
 
         return $this;
     }
 
-    public function getMuziekstijl(): ?string
+    public function getMusicstyle(): ?string
     {
-        return $this->Muziekstijl;
+        return $this->Musicstyle;
     }
 
-    public function setMuziekstijl(?string $Muziekstijl): self
+    public function setMusicstyle(?string $Musicstyle): self
     {
-        $this->Muziekstijl = $Muziekstijl;
+        $this->Musicstyle = $Musicstyle;
 
         return $this;
     }
 
-    public function getGeboortedatum(): ?\DateTimeInterface
+    public function getBirthdate(): ?\DateTimeInterface
     {
-        return $this->Geboortedatum;
+        return $this->Birthdate;
     }
 
-    public function setGeboortedatum(?\DateTimeInterface $Geboortedatum): self
+    public function setBirthdate(?\DateTimeInterface $Birthdate): self
     {
-        $this->Geboortedatum = $Geboortedatum;
+        $this->Birthdate = $Birthdate;
 
         return $this;
     }
 
-    public function getBeschrijving(): ?string
+    public function getDescription(): ?string
     {
-        return $this->Beschrijving;
+        return $this->Description;
     }
 
-    public function setBeschrijving(?string $Beschrijving): self
+    public function setDescription(?string $Description): self
     {
-        $this->Beschrijving = $Beschrijving;
+        $this->Description = $Description;
 
         return $this;
     }

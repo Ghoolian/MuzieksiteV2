@@ -127,7 +127,7 @@ class SecurityController extends AbstractController
             // TODO Redirect to system dashboard
             // Please use return $this->render() to set a template.
             throw new NotImplementedException('Please specify a route for login');
-            return $this->render('home.html.twig');
+            return $this->render('base.html.twig');
         }
 
         if($request->getMethod() == "POST") {

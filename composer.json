@@ -38,7 +38,8 @@
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
       "ext-intl": "*",
-      "ext-openssl": "*"
+      "ext-openssl": "*",
+      "ext-http": "*"
     },
     "require-dev": {
         "symfony/browser-kit": "^4.4",

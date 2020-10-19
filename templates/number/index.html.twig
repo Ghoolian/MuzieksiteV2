@@ -26,7 +26,7 @@
                 <td>{{ number.name }}</td>
                 <td>{{ number.duration|date('h:i:s') }}</td>
                 <td>{{ number.album.name }}</td>
-                <td>{{ number.album.artist.naam }} {{ number.album.artist.achternaam  }}</td>
+                <td>{{ number.album.artist.name }} {{ number.album.artist.surname  }}</td>
                 <td>
                     <a href="{{ path('number_show', {'id': number.id}) }}">show</a>
 

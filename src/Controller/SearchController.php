@@ -1,36 +1,37 @@
 <?php
 
+
+
 namespace App\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Number;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Response;
 
-class SearchController extends AbstractController
+/**
+ * @method getDoctrine()
+ * @method render(string $string, array $array)
+ * @method createNotFoundException(string $string)
+ */
+class SearchController
 {
     /**
-     * @Route("/search", name="search")
+     * @Route("/product/{name}", name="product_show")
+     * @param $name
+     * @return NotFoundHttpException|Response
      */
-    public function index()
+    public function show($name)
     {
-        return $this->render('search/index.html.twig', [
-            'controller_name' => 'SearchController',
-        ]);
-    }
+        $product = $this->getDoctrine()
+            ->getRepository(Number::class)
+            ->find($name);
 
-    public function searchBar(){
-        $form = $this->createFormBuilder(null)
-         ->add('query', TextType::class)
-            ->add('search', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn btn-primary'
-                ]
-            ])
-            ->getForm();
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No number found for '.$name
+            );
+        }
 
-        return $this->render('search/searchBar.html.twig', [
-                'form' => $form->createView()
-            ]);
+        return $this->render('product/show.html.twig', ['product' => $product]);
     }
 }

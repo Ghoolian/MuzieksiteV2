@@ -21,7 +21,7 @@ class AlbumType extends AbstractType
             ->add('artist', EntityType::class, [
                 'class' => Artist::class,
                 'choice_label' => function(Artist $artist) {
-                    return $artist->getNaam();
+                    return $artist->getName();
                 }]
             )
             ->add('albumhoes', FileType::class, [

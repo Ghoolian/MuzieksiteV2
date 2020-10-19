@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Artiesten index{% endblock %}
+{% block title %}Artist index{% endblock %}
 
 {% block body %}
-    <h1>Artiesten index</h1>
+    <h1>Artist index</h1>
 <br><br>
     <table class="table table-bordered mb-0">
         <thead class="thead-light">
         <tr>
             <th>Id</th>
-            <th>Naam</th>
-            <th>Achternaam</th>
-            <th>Muziekstijl</th>
-            <th>Geboortedatum</th>
-            <th>Beschrijving</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Musicstyle</th>
+            <th>Birthdate</th>
+            <th>Description</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -21,11 +21,11 @@
         {% for artist in artist %}
             <tr>
                 <td>{{ artist.id }}</td>
-                <td>{{ artist.Naam }}</td>
-                <td>{{ artist.Achternaam }}</td>
-                <td>{{ artist.Muziekstijl }}</td>
-                <td>{{ artist.Geboortedatum ? artist.Geboortedatum|date('Y-m-d') : '' }}</td>
-                <td>{{ artist.Beschrijving }}</td>
+                <td>{{ artist.Name }}</td>
+                <td>{{ artist.Surname }}</td>
+                <td>{{ artist.Musicstyle }}</td>
+                <td>{{ artist.Birthdate ? artist.Birthdate|date('Y-m-d') : '' }}</td>
+                <td>{{ artist.Description }}</td>
 
                 <td>
                     <a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>
