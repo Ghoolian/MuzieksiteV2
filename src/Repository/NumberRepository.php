@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Number;
+use App\Controller\SearchController;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -19,6 +20,15 @@ class NumberRepository extends ServiceEntityRepository
         parent::__construct($registry, Number::class);
     }
 
+    public function findOneBySomeField($search): ?Number
+    {
+        return $this->createQueryBuilder('n')
+            ->andWhere('n.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
     // /**
     //  * @return Number[] Returns an array of Number objects
     //  */
@@ -37,14 +47,6 @@ class NumberRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Number
-    {
-        return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
+
     */
 }

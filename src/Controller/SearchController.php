@@ -4,6 +4,8 @@
 
 namespace App\Controller;
 use App\Entity\Number;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,23 +17,16 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class SearchController
 {
+
     /**
-     * @Route("/product/{name}", name="product_show")
-     * @param $name
-     * @return NotFoundHttpException|Response
+     * @Route("/search}", name="number_search")
+     * @param Request $request
+     * @param $searchvalue
+     * @return Request
      */
-    public function show($name)
+    public function index(Request $request, $searchvalue)
     {
-        $product = $this->getDoctrine()
-            ->getRepository(Number::class)
-            ->find($name);
-
-        if (!$product) {
-            throw $this->createNotFoundException(
-                'No number found for '.$name
-            );
-        }
-
-        return $this->render('product/show.html.twig', ['product' => $product]);
+        $request->query->get($searchvalue);
+        return $request;
     }
 }
