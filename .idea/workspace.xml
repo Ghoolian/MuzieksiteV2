@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f83b3ac8-79fc-441a-8cbf-9219f012b523" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MuzieksiteV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MuzieksiteV2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SearchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/NumberRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/NumberRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +185,9 @@
       <workItem from="1603090875276" duration="12286000" />
       <workItem from="1603178594647" duration="1208000" />
       <workItem from="1603267371948" duration="15739000" />
+      <workItem from="1603350648152" duration="4009000" />
+      <workItem from="1603367112543" duration="7086000" />
+      <workItem from="1603381449525" duration="409000" />
     </task>
     <servers />
   </component>
@@ -204,6 +202,14 @@
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-2294" y="-318" key="#Inspections/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1601468599063" />
+    <state x="336" y="361" key="#SQL_Dialects" timestamp="1603374747836">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="336" y="361" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1603374747836" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603374692254">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603374692254" />
     <state x="1042" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603108451098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -212,11 +218,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602861974849" />
-    <state x="1238" y="340" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603118805261">
+    <state x="1238" y="340" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603379313360">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-2190" y="-238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602665594307" />
-    <state x="1238" y="340" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603118805261" />
+    <state x="1238" y="340" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603379313360" />
     <state x="-2141" y="-80" width="441" height="239" key="ComposerInitDialogKey" timestamp="1601908455462">
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
@@ -226,6 +232,10 @@
     </state>
     <state x="-2140" y="-238" key="FileChooserDialogImpl/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1601882353319" />
     <state x="1275" y="340" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602766793076" />
+    <state x="540" y="254" key="IDE.errors.dialog" timestamp="1603377380099">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603377380099" />
     <state x="1278" y="316" key="NewPhpClassDialog" timestamp="1603117685570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -243,15 +253,19 @@
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-2328" y="-260" key="Vcs.Push.Dialog.v2/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602228096584" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603366056843">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603366056843" />
     <state x="-3847" y="-696" width="1293" height="1407" key="dock-window-1" timestamp="1602072255076">
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>
     <state x="-3847" y="-696" width="1293" height="1407" key="dock-window-1/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602072255076" />
-    <state x="1219" y="324" width="573" height="564" key="find.popup" timestamp="1603289958441">
+    <state x="1219" y="324" width="573" height="564" key="find.popup" timestamp="1603366446987">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-2211" y="-260" width="602" height="592" key="find.popup/0.0.1536.824/-3840.-696.2560.1400@-3840.-696.2560.1400" timestamp="1602686611414" />
-    <state x="1219" y="324" width="573" height="564" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603289958441" />
+    <state x="1219" y="324" width="573" height="564" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603366446987" />
     <state x="-2257" y="-376" width="672" height="678" key="search.everywhere.popup" timestamp="1601898127519">
       <screen x="-3840" y="-696" width="2560" height="1400" />
     </state>

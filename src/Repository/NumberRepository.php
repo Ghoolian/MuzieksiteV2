@@ -6,6 +6,7 @@ use App\Entity\Number;
 use App\Controller\SearchController;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @method Number|null find($id, $lockMode = null, $lockVersion = null)
@@ -15,19 +16,25 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class NumberRepository extends ServiceEntityRepository
 {
+    public function index(Request $request, $searchvalue)
+    {
+        $request->query->get($searchvalue);
+        return $request;
+    }
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Number::class);
     }
 
-    public function findOneBySomeField($search): ?Number
+    public function findOneBySomeField(): ?Number
     {
-        return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-            ;
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT n.Name
+            FROM App\Entity\Number n 
+            ORDER BY n.Name ASC');
+            return $query->getArrayResult();
     }
     // /**
     //  * @return Number[] Returns an array of Number objects
