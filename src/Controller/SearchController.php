@@ -3,30 +3,35 @@
 
 
 namespace App\Controller;
-use App\Entity\Number;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use App\Repository\NumberRepository;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Response;
+
+
 
 /**
  * @method getDoctrine()
  * @method render(string $string, array $array)
  * @method createNotFoundException(string $string)
+ * @Route("/search")
  */
-class SearchController
+class SearchController extends NumberRepository
 {
 
+
     /**
-     * @Route("/search}", name="number_search")
+     * @Route("/search", name="numbersearch", methods={"GET","POST"})
      * @param Request $request
      * @param $searchvalue
-     * @return Request
+     * @return SearchController
      */
-    public function index(Request $request, $searchvalue)
+    public function search(Request $request, $searchvalue)
     {
         $request->query->get($searchvalue);
-        return $request;
+        $this->findNumbersBySearch($searchvalue);
+        return $this->render(search.html.twig);
+
     }
+
+
 }
