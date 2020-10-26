@@ -17,19 +17,21 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class SearchController extends NumberRepository
 {
-
-
     /**
      * @Route("/search", name="numbersearch", methods={"GET","POST"})
      * @param Request $request
      * @param $searchvalue
-     * @return SearchController
      */
     public function search(Request $request, $searchvalue)
     {
         $request->query->get($searchvalue);
         $this->findNumbersBySearch($searchvalue);
-        return $this->render(search.html.twig);
+        foreach($searchvalue as $searchvalues){
+            $output[] = array($searchvalues->getName());
+        }
+        return $this->render('search/search.html.twig', [
+            'number' => $output->findAll(),
+        ]);
 
     }
 

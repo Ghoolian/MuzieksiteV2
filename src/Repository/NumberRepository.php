@@ -8,6 +8,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 
+
 /**
  * @method Number|null find($id, $lockMode = null, $lockVersion = null)
  * @method Number|null findOneBy(array $criteria, array $orderBy = null)
@@ -23,11 +24,17 @@ class NumberRepository extends ServiceEntityRepository
         parent::__construct($registry, Number::class);
     }
 
-    public function findNumbersBySearch(string $Name): array
+    public function findNumbersBySearch(string $searchvalue): array
     {
-        return $this->findBy([
-            'searchvalue' => $Name
-        ]);
+        // "N" is een alias die wordt gebruikt voor de rest van de query.
+        $qb = $this->createQueryBuilder('n')
+            ->where('n.Name LIKE :searchvalue')
+            ->setParameter('Name', '%'.$searchvalue.'%')
+            ->orderBy('n.Name', 'ASC');
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
     }
 
 //    Old search function
