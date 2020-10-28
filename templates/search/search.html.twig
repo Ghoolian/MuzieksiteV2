@@ -6,27 +6,24 @@
     <h1>Search results</h1>
 
     <table class="table">
-        {% for number in output %}
-        <tbody>
+
         <tr>
             <th>Id</th>
-            <td>{{ number.id }}</td>
-        </tr>
-        <tr>
             <th>Naam</th>
-            <td>{{ number.name }}</td>
-        </tr>
-        <tr>
             <th>Duration</th>
-            <td>{{ number.duration }}</td>
-        </tr>
-        <tr>
             <th>Album</th>
-            <td>{{ number.album.name }}</td>
-        </tr>
-        <tr>
             <th>Artiest</th>
-            <td>{{ number.album.artist.naam }} {{ number.album.artist.achternaam }}</td>
+
+        </tr>
+        <tbody>
+        <tr>
+            {% for results %}
+        <td>{{ number.id }}</td>
+        <td>{{ number.name }}</td>
+        <td>{{ number.duration }}</td>
+        <td>{{ number.album.name }}</td>
+        <td>{{ number.album.artist.naam }} {{ number.album.artist.achternaam }}</td>
+            {% endfor %}
         </tr>
         </tbody>
     </table>

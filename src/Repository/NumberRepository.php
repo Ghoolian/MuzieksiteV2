@@ -24,30 +24,35 @@ class NumberRepository extends ServiceEntityRepository
         parent::__construct($registry, Number::class);
     }
 
-    public function findNumbersBySearch(string $searchvalue): array
+    public function findNumbersBySearch(string $searchvalue)
     {
         // "N" is een alias die wordt gebruikt voor de rest van de query.
-        $qb = $this->createQueryBuilder('n')
-            ->where('n.Name LIKE :searchvalue')
-            ->setParameter('Name', '%'.$searchvalue.'%')
-            ->orderBy('n.Name', 'ASC');
+        return $this->createQueryBuilder('n')
+                ->where('n.Name LIKE :searchvalue')
+                ->setParameter('Name', '%'.$searchvalue.'%')
+                ->orderBy('n.Name', 'ASC');
 
-        $query = $qb->getQuery();
-
-        return $query->execute();
     }
 
 //    Old search function
-//    public function getSearch()
+//    public function findNumbersBySearch(string $searchvalue): array
 //    {
-//        $entityManager = $this->getEntityManager();
+//        // "N" is een alias die wordt gebruikt voor de rest van de query.
+//        $qb = $this->createQueryBuilder('n')
+//            ->where('n.Name LIKE :searchvalue')
+//            ->setParameter('Name', '%'.$searchvalue.'%')
+//            ->orderBy('n.Name', 'ASC');
 //
-//        $query = $entityManager->createQuery(
-//            'SELECT n.Name
-//            FROM App\Entity\Number n
-//            ORDER BY n.Name ASC');
-//            return $query->getArrayResult();
+//        $query = $qb->getQuery();
+//
+//        return $this->createQueryBuilder('n')
+//            ->andWhere('n.Name LIKE :searchvalue')
+//            ->setParameter('Name', '%'.$searchvalue.'%')
+//            ->orderBy('n.Name', 'ASC')
+//            ->getQuery()
+//            ->getResult();
 //    }
+
     // /**
     //  * @return Number[] Returns an array of Number objects
     //  */
@@ -68,4 +73,17 @@ class NumberRepository extends ServiceEntityRepository
     /*
 
     */
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
