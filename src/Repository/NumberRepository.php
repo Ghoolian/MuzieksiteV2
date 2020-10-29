@@ -24,13 +24,16 @@ class NumberRepository extends ServiceEntityRepository
         parent::__construct($registry, Number::class);
     }
 
-    public function findNumbersBySearch(string $searchvalue)
+    public function findNumbersBySearch(string $input)
     {
+        //dd($input);
         // "N" is een alias die wordt gebruikt voor de rest van de query.
         return $this->createQueryBuilder('n')
-                ->where('n.Name LIKE :searchvalue')
-                ->setParameter('Name', '%'.$searchvalue.'%')
-                ->orderBy('n.Name', 'ASC');
+                ->where('n.Name LIKE :input')
+                ->setParameter(':input', '%'.$input.'%')
+                ->orderBy('n.Name', 'ASC')
+                ->getQuery()
+                ->getResult();
 
     }
 

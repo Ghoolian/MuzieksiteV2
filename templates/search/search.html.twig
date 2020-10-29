@@ -17,12 +17,12 @@
         </tr>
         <tbody>
         <tr>
-            {% for results %}
+            {% for number in results %}
         <td>{{ number.id }}</td>
         <td>{{ number.name }}</td>
-        <td>{{ number.duration }}</td>
+        <td>{{ number.duration|date('h:i:s') }}</td>
         <td>{{ number.album.name }}</td>
-        <td>{{ number.album.artist.naam }} {{ number.album.artist.achternaam }}</td>
+        <td>{{ number.album.artist.name }} {{ number.album.artist.surname }}</td>
             {% endfor %}
         </tr>
         </tbody>
